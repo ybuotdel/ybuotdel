@@ -1,26 +1,18 @@
 
 
 body {
-    margin: 2%;
+    margin: 5%;
     font-family: 'calibri';
     text-align: center;
   }
 
-#param_form {
-    margin: 5%;
-    font-family: 'calibri';
-    color:royalblue;
-    font-size: 1vw;
-    text-align: left;
-
-  }
 
   #outer-grid {
     display: grid;
     grid-template-rows: 60% 30%;
     grid-template-columns: 25% 75%;
     grid-gap: 5px 5px;
-    align-items: stretch;
+    align-items: end;
     max-width: 80%;
     max-height: 70%;
     margin-left: auto;
@@ -29,7 +21,7 @@ body {
     margin-bottom: auto;
   }
   #outer-grid > div {
-    background-color: rgba(245, 245, 245, 1.0);
+    background-color: white;
     color: black;
     font-size: 2vw;
     padding: 5px;
@@ -44,14 +36,14 @@ body {
 
   #inner-grid {
     display: grid;
-    grid-template-rows:18% 38% 38%;
+    grid-template-rows:20% 40% 40%;
     grid-template-columns: 50% 50%;
     grid-gap: 5px 5px;
-    align-items: middle;
+    align-items: stretch;
     max-height: fit-content;
   }
   #inner-grid > div {
-    background: lightgreen;
+    background: rgba(144, 238, 144, 0.404);
     padding: 5px;
   }
   #button-grid {
@@ -155,4 +147,15 @@ body {
       text-align: center;
       vertical-align: text-top;
       font-size: 1.5vw;
+    }
+
+    #param_form {
+      margin: 5%;
+      font-family: 'calibri';
+      color:royalblue;
+      font-size: 1vw;
+      text-align: left;
+      background-color: rgba(255, 140, 0, 0.158);
+      max-height:fit-content;
+      padding: 5% 5%;
     }
