@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="scriptJS.js"></script>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>TEST TLT</title>
+</head>
+<body>
+    <div id="outer-grid">
+      <div>
+        <form id="param_form">
+            <label for="nbpulse">Number of pulse:</label>
+            <input type="text" id="nbpulse" name="nbpulse" value="3"><br>
+            <label for="pulselen">Pulse duration (s):</label>
+            <input type="text" id="pulselen" name="pulselen" value="0.5"><br>
+            <label for="pulselen">Break duration (s):</label>
+            <input type="text" id="breaklen" name="breaklen" value="0.25"><br>
+            <label for="pulselen">Break duration (s):</label>
+            <input type="text" id="breaklen" name="breaklen" value="0.25"><br>
+            <label for="duration">Choose test duration:</label><br>
+            <select name="duration" id="duration">
+              <option value="short">Short</option>
+              <!-- <option value="middle">Middle</option>
+              <option value="long">Long</option> -->
+            </select><br>
+            <label for="channel">Choose BC/AC:</label><br>
+            <select name="channel" id="channel">
+              <option value="BC">BC</option>
+              <option value="AC">AC</option>
+            </select><br>
+          </form> 
+      </div>
+    <div>    
+        <canvas id="myChart"></canvas>
+        <script>init_graph();</script>
+   </div> 
+    <div id="inner-grid">
+      <div ><label class="labelinfo" id="freqval" >1000</div>
+      <div ><label class="labelinfo" id="ampval">-20</div>
+      <div ><button class="button1" onclick="frequp()">FREQ+</button></div>
+      <div ><button class="button1" onclick="ampup()">AMP+</button></div>
+      <div ><button class="button1" onclick="freqdown()">FREQ-</button></div>
+      <div ><button class="button1" onclick="ampdown()">AMP-</button></div>
+    </div>
+    <div>
+      <div id="button-grid">
+        <div class="item-pulsebutton">
+          <button class="buttonPulse" onclick="Play_pulse()">PULSE</button></div>
+        <div ><button class="buttonRight" onclick="getResultRight()">RIGHT</button></div>
+        <div ><button class="buttonCenter" onclick="getResultCenter()">CENTER</button></div>
+        <div ><button class="buttonLeft" onclick="getResultLeft()">LEFT</button></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
+    

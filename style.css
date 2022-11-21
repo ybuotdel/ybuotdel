@@ -1,0 +1,158 @@
+
+
+body {
+    margin: 2%;
+    font-family: 'calibri';
+    text-align: center;
+  }
+
+#param_form {
+    margin: 5%;
+    font-family: 'calibri';
+    color:royalblue;
+    font-size: 14px;
+    text-align: left;
+
+  }
+
+  #outer-grid {
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 25% 75%;
+    grid-gap: 4px 4px;
+    align-items: stretch;
+    max-width: 1000px;
+    max-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  #outer-grid > div {
+    background-color: rgba(245, 245, 245, 1.0);
+    color: black;
+    font-size: 4vw;
+    padding: 8px;
+  }
+  .item-canvas {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+
+  #inner-grid {
+    display: grid;
+    grid-template-rows:18% 38% 38%;
+    grid-template-columns: 50% 50%;
+    grid-gap: 4px 4px;
+    align-items: middle;
+    max-height: fit-content;
+  }
+  #inner-grid > div {
+    background: lightgreen;
+    padding: 4px;
+  }
+  #button-grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 4px 4px;
+    align-items: stretch;
+  }
+  #button-grid > div {
+    background: rgba(176, 221, 250, 0.637);
+    padding: 5px;
+  }
+  .item-pulsebutton {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+
+  .button1 {
+    background-color:darkorange;
+    border: none;
+    color: white;
+    padding:10% 10%;
+    border-radius: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    }
+    .button1:hover {
+      background-color: rgb(216, 120, 3); /* Green */
+    }
+
+  .buttonPulse {
+      background-color:darkorange;
+      border: none;
+      color: white;
+      padding: 5% 5%;
+      border-radius: 10%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      }
+    .buttonPulse:hover {
+      background-color: rgb(216, 120, 3); /* Green */
+    }
+  
+    .buttonRight {
+      background-color:rgb(35, 156, 156);
+      border: none;
+      color: white;
+      padding: 10% 10%;
+      border-radius: 10%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      }
+    .buttonRight:hover {
+      background-color: rgb(23, 109, 109);
+    }
+
+    .buttonLeft {
+      background-color:rgb(153,102,255);
+      border: none;
+      color: white;
+      padding: 10% 10%;
+      border-radius: 10%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      }
+    .buttonLeft:hover {
+      background-color: rgb(131, 72, 248);
+    }
+
+    .buttonCenter {
+      background-color:rgb(255,205,86);
+      border: none;
+      color: white;
+      padding: 10% 10%;
+      border-radius: 10%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      }
+    .buttonCenter:hover {
+      background-color: rgb(255, 205, 32);
+    }
+
+    .labelinfo{
+      font-family: 'calibri';
+      color: limegreen;
+      text-align: center;
+      vertical-align: text-top;
+      font-size: 24px;
+    }
