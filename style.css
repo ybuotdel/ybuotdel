@@ -66,79 +66,80 @@ body {
 
   .button1 {
     background-color:darkorange;
-    border: none;
+    border: 0.16em solid rgba(255,255,255,0);
     color: white;
     padding:10% 10%;
-    border-radius: 10%;
+    border-radius: 20%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.5vw;
+    font-size: 1.vw;
 
     /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
     }
     .button1:hover {
-      background-color: rgb(216, 120, 3); /* Green */
+      border-color: rgba(255,255,255,1);
     }
 
   .buttonPulse {
       background-color:darkorange;
-      border: none;
+      border: 0.16em solid rgba(255,255,255,0);
       color: white;
       padding: 2.5% 2.5%;
-      border-radius: 10%;
+      border-radius: 50%;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 1.5vw;
+      aspect-ratio:  1 / 1;
       }
     .buttonPulse:hover {
-      background-color: rgb(216, 120, 3); /* Green */
+      border-color: rgba(255,255,255,1);
     }
   
     .buttonRight {
       background-color:rgb(35, 156, 156);
-      border: none;
+      border: 0.16em solid rgba(255,255,255,0);;
       color: white;
       padding: 5% 5%;
-      border-radius: 10%;
+      border-radius: 20%;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 1.5vw;
       }
     .buttonRight:hover {
-      background-color: rgb(23, 109, 109);
+      border-color: rgba(255,255,255,1);
     }
 
     .buttonLeft {
       background-color:rgb(153,102,255);
-      border: none;
+      border: 0.16em solid rgba(255,255,255,0);
       color: white;
       padding: 5% 5%;
-      border-radius: 10%;
+      border-radius: 20%;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 1.5vw;
       }
     .buttonLeft:hover {
-      background-color: rgb(131, 72, 248);
+      border-color: rgba(255,255,255,1);
     }
 
     .buttonCenter {
       background-color:rgb(255,205,86);
-      border: none;
+      border: 0.16em solid rgba(255,255,255,0);
       color: white;
       padding: 5% 5%;
-      border-radius: 10%;
+      border-radius: 20%;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 1.5vw;
       }
     .buttonCenter:hover {
-      background-color: rgb(255, 205, 32);
+      border-color: rgba(255,255,255,1);
     }
 
     .labelinfo{
