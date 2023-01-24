@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
+integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>TEST TED</title>
+</head>
+<body class="body">
+  <div class="tab">
+    <button class="tablinks" id="ASSbttn" onclick="openTab(event, 'ASSESSEMENT')" >ASSESSEMENT</button>
+    <button class="tablinks" id="TEDbttn" onclick="openTab(event, 'TED')">TED</button>
+    <button class="tablinks" id="RESbttn" onclick="openTab(event, 'RESULT')">RESULT</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="ASSESSEMENT" class="tabcontent">
+    <div class="tab">
+      <button class="AssLinks" id="INFObttn" onclick="openAssTab(event, 'INFO')" >General Info</button>
+      <button class="AssLinks" id="ISSUEbttn" onclick="openAssTab(event, 'ISSUES')">Issues</button>
+      <button class="AssLinks" id="ENTbttn" onclick="openAssTab(event, 'ENT')">ENT Background</button>
+    </div>
+        <!-- general info -->
+    <div id="INFO" class="AssContent">
+      <form onsubmit ="return false">
+      <fieldset>  
+      <legend>General Information</legend>
+      <label for="Date">Date:</label>
+      <input type="date" id="Date" name="Date" value=""><br><br>
+      <label for="InterviewDate">InterviewDate:</label>
+      <input type="date" id="InterviewDate" name="InterviewDate" value=""><br><br>
+      <label for="ClientType">Client type	adult/child or autonomous/assisted?</label>
+      <select name="ClientType" id="ClientType">
+      <option value="autonomous">Autonomous</option>
+      <option value="assisted">Assisted</option>
+      </select><br><br>
+      <label for="gender"> Gender:</label>
+      <select name="Gender" id="Gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        </select><br><br>
+      <label for="FirstName">First Name:</label>
+      <input type="text" id="FirstName" name="FistName" value=" "><br><br>
+      <label for="LastName">Last Name:</label>
+      <input type="text" id="LastName" name="LastName" value=" "><br><br>
+      <label for="Birthdate">Birthdate:</label>
+      <input type="date" id="Birthdate" name="Birthdate" value=""><br><br>
+      <label for="Email">Email:</label>
+      <input type="text" id="Email" name="Email" value=" "><br><br>
+      <label for="Adress">Adress:</label>
+      <input type="text" id="Adress" name="Adress" value=" "><br><br>
+      <label for="City">City:</label>
+      <input type="text" id="City" name="City" value=" "><br><br>
+      <label for="State">State:</label>
+      <input type="text" id="State" name="State" value=" "><br><br>
+      <label for="ZIP">Post Code/ZIP:</label>
+      <input type="text" id="ZIP" name="ZIP" value=" "><br><br>
+      <label for="country">Country:</label>
+      <input type="text" id="Country" name="Country" value=" "><br><br>
+      <label for="homephone">Home phone:</label>
+      <input type="tel" id="homephone" name="homephone" placeholder="00000000"><br><br>
+      <label for="cellphone">Cell phone:</label>
+      <input type="tel" id="cellphone" name="cellphone" placeholder="00000000"><br><br>
+      <label for="workphone">Work phone:</label>
+      <input type="tel" id="workphone" name="workphone" placeholder="00000000"><br><br>
+      <label for="persoStatus">Personal Status:</label>
+      <input type="persoStatus" id="persoStatus" name="persoStatus" value=" "><br><br>
+      <label for="workStatus">Work Status:</label>
+      <input type="workStatus" id="workStatus" name="workStatus" value=" "><br><br>
+      <label for="chidlLive">  Is the child living with?:</label>
+      <input type="chidlLive" id="chidlLive" name="chidlLive" value=" "><br><br>
+      <input type="submit" value="SAVE" onclick= "saveGeneralInfo()">
+      </fieldset>
+      </form>
+    </div>
+    <!-- issues info -->
+    <div id="ISSUES" class="AssContent">
+      <form onsubmit ="return false">
+      <fieldset>  
+      <legend>Issues</legend>
+      <h3>Could you please explain as clearly and precisely as possible the reasons why you want to do an initial Tomatis assessment ?</h3>
+      <h4>At the level of motor skills</h4>
+      <label for="globalmot">Global Motricity</label><br>
+      <textarea id="globalmot" name="globalmot" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="finemot">Fine Motricity</label><br>
+      <textarea id="finemot" name="finemot" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="visiospatial">Visio Spatial</label><br>
+      <textarea id="visiospatial" name="visiospatial" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="coordination">Coordination</label><br>
+      <textarea id="coordination" name="coordination" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4>At the level of language and communication</h4>
+      <label for="reception">Langage Reception</label><br>
+      <textarea id="reception" name="reception" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="comprehension">Langage comprehension</label><br>
+      <textarea id="comprehension" name="comprehension" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4> At the emotionnal level</h4>
+      <label for="anxiety">Anxiety</label><br>
+      <textarea id="anxiety" name="anxiety" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="stress">Stress</label><br>
+      <textarea id="stress" name="stress" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="depression">Depression</label><br>
+      <textarea id="depression" name="depression" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4> At the cognitive level (memory and attention)</h4>
+      <label for="attention">Attention</label><br>
+      <textarea id="attention" name="attention" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="memory">Memory</label><br>
+      <textarea id="memory" name="memory" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="executive">Executive</label><br>
+      <textarea id="executive" name="executive" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="reasonning">Reasonning</label><br>
+      <textarea id="reasonning" name="reasonning" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="pbsolving">Problem solving</label><br>
+      <textarea id="pbsolving" name="pbsolving" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4> At Neurodevelopmental level</h4>
+      <label for="neurodev"></label>
+      <textarea id="neurodev" name="neurodev" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4> At neurological level</h4>
+      <label for="neurolevel"></label>
+      <textarea id="neurolevel" name="neurolevel" rows="3" cols="150" placeholder="450char max"></textarea><br><br>
+      <input type="submit" value="SAVE" onclick= "saveIssues()">
+      </fieldset>
+      </form>
+    </div>
+    <!-- ENT info -->
+    <div id="ENT" class="AssContent">
+      <form onsubmit ="return false">
+      <fieldset>  
+      <legend>ENT Background</legend>
+      <label for="earinfection">Are or were you/your child prone to recurrent ear infections ?</label>
+      <select name="earinfection" id="earinfection">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+      </select><br>
+      <h4>Please rate the following difficulties from 0 to 10 as to what extent they are a source of uncomfort in your/your child daily life  </h4>
+      <label for="hearloss">Hearing Loss</label>
+      <select name="hearloss" id="hearloss">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select><br><br>
+      <label for="tinnitus">Tinnitus</label>
+      <select name="tinnitus" id="tinnitus">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select><br><br>
+      <label for="dizziness">Dizziness</label>
+      <select name="dizziness" id="dizziness">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select><br><br>
+      <label for="auditorySensi">Auditoy sentivity to noisy environment (busy street, restaurant, meetings..)</label>
+      <select name="auditorySensi" id="auditorySensi">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        </select><br><br>
+      <label for="lastTest"> When was your/your child last hearing test ?</label><br>
+      <textarea id="lastTest" name="lastTest" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4>Epilepsy</h4>
+      <label for="epilepsy"> Does you/your child have a history of epilepsy ?</label><br>
+      <textarea id="epilepsy" name="lastTest" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4>Other</h4>
+      <label for="healthprob"> Are there any other important health related problems ?</label><br>
+      <textarea id="healthprob" name="healthprob" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <h4>Goals</h4>
+      <label for="goals"> What are the goals you would like to achieve through a series of Tomatis programs ?</label><br>
+      <textarea id="goals" name="goals" rows="3" cols="150" placeholder="450char max"></textarea><br>
+      <label for="goalexample"> Please give a few examples, that will show your goals have been achieved ?</label><br>
+      <textarea id="goalexample" name="goalexample" rows="3" cols="150" placeholder="450char max"></textarea><br><br>
+      <input type="submit" value="SAVE" onclick= "saveENT()">
+      </fieldset>
+      </form>
+    </div>
+  </div>
+  <div id="TED" class="tabcontent">
+    <div>
+      <label for="inputFileToRead"> Load TED Questions</label>
+      <input type="file" name="inputFileToRead" id="inputFileToRead" ></input>
+    </div><br><br>
+    <div class="TEDtabcontainer">
+      <div class="gridProgress">
+          <progress id="progressbar" max="100" value="0"></progress> 
+          <label id="progress"></label>
+        </div>
+      </div>
+      <br><br>
+      <div class="labelQ">
+      <label id="Question"></label>
+      </div><br><br>
+        <div class="slidecontainer">
+          <input type="range" list="tickmarks" min="0" max="10" value="0" step="1" class="slider" id="slideResponse" onchange="updateSlider()">
+          <datalist id="tickmarks">
+          <option value="0" label="0"></option>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5" label="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10" label="10"></option>
+          </datalist>
+          <label id="slidevalue">0</label>
+      </div><br><br>
+    <div class="gridButton">
+      <button  id="PreviousButton"onclick="Previousquestion()"><Str>Previous</Str></button>
+      <button id="NextButton" onclick="Nextquestion()">Next</button>
+    </div>
+  </div>
+  <div id="RESULT" class="tabcontent">
+    <div class="tab">
+      <button class="ResLinks" id="ASSRESbttn" onclick="openResTab(event, 'ASSRES')" >ASSESSEMENT</button>
+      <button class="ResLinks" id="TEDRESbttn" onclick="openResTab(event, 'TEDRES')">TED RESULT</button>
+    </div>
+    <div id="ASSRES" class="ResContent">
+      <div id="EXPORT_ASSPDF"></div>
+        <div class="gridASS">
+          <h4>GENERAL INFO</h4>
+          <div class="gridInfo">
+          <label >Date:</label>
+          <label class="labelblue" id="ResDate"></label>
+          <label >InterviewDate:</label>
+          <label class="labelblue" id="ResInterviewDate"></label>
+          <label >Autonomous/Assisted?:</label>
+          <label class="labelblue" id="ResClientType"></label>
+          <label > Gender:</label>
+          <label class="labelblue" id="ResGender"></label>
+          <label >First Name:</label>
+          <label class="labelblue" id="ResFirstName"></label>
+          <label >Last Name:</label>
+          <label class="labelblue" id="ResLastName"></label>
+          <label >Birthdate:</label>
+          <label class="labelblue" id="ResBirthdate"></label>
+          <label >Email:</label>
+          <label class="labelblue" id="ResEmail"></label>
+          <label >Adress:</label>
+          <label class="labelblue" id="ResAdress"></label>
+          <label >City:</label>
+          <label class="labelblue" id="ResCity"></label>
+          <label >State:</label>
+          <label class="labelblue" id="ResState"></label>
+          <label >Post Code/ZIP:</label>
+          <label class="labelblue" id="ResZIP"></label>
+          <label >Country:</label>
+          <label class="labelblue" id="ResCountry"></label>
+          <label >Home phone:</label>
+          <label class="labelblue" id="Reshomephone"></label>
+          <label >Cell phone:</label>
+          <label class="labelblue" id="Rescellphone"></label>
+          <label >Work phone:</label>
+          <label class="labelblue" id="Resworkphone"></label>
+          <label >Personal Status:</label>
+          <label class="labelblue" id="RespersoStatus"></label>
+          <label >Work Status:</label>
+          <label class="labelblue" id="ResworkStatus"></label>
+          <label >  Child living with:</label>
+          <label class="labelblue" id="ReschidlLive"></label>
+          </div><br><br>
+          <h4>ISSUES</h4>
+          <div class="gridIssues">
+          <label id="Issuesfullline1">Reasons of initial Tomatis assessment</label>
+          <label id="Issuesfullline2">At the level of motor skills</label>
+          <label >Global Motricity:</label>
+          <label class="labelblue" id="Resglobalmot"></label>
+          <label >Fine Motricity:</label>
+          <label class="labelblue" id="Resfinemot" ></label>
+          <label>Visio Spatial:</label>
+          <label class="labelblue" id="Resvisiospatial" ></label>
+          <label >Coordination:</label>
+          <label class="labelblue" id="Rescoordination" ></label>
+          <label id="Issuesfullline3">At the level of language and communication</label>
+          <label >Langage Reception:</label>
+          <label class="labelblue" id="Resreception" ></label>
+          <label >Langage comprehension:</label>
+          <label  class="labelblue" id="Rescomprehension"></label>
+          <label id="Issuesfullline4"> At the emotionnal level</label>
+          <label >Anxiety:</label>
+          <label class="labelblue" id="Resanxiety" ></label>
+          <label >Stress:</label>
+          <label class="labelblue" id="Resstress" ></label>
+          <label >Depression:</label>
+          <label class="labelblue" id="Resdepression" ></label>
+          <label id="Issuesfullline5"> At the cognitive level (memory and attention)</label>
+          <label >Attention:</label>
+          <label class="labelblue" id="Resattention"></label>
+          <label >Memory:</label>
+          <label class="labelblue" id="Resmemory" ></label>
+          <label >Executive:</label>
+          <label class="labelblue" id="Resexecutive" ></label>
+          <label >Reasonning:</label>
+          <label class="labelblue" id="Resreasonning" ></label>
+          <label >Problem solving:</label>
+          <label class="labelblue" id="Respbsolving" ></label>
+          <label id="Issuesfullline6"> At Neurodevelopmental level</label>
+          <label class="labelblue" id="Resneurodev" ></label>
+          <label id="Issuesfullline7"> At neurological level</label>
+          <label class="labelblue" id="Resneurolevel" ></label>
+          </div>
+          <h4>ENT BACKGROUND</h4>
+          <div class="gridENT">
+          <label >Recurrent ear infections:</label>
+          <label  class="labelblue" id="Researinfection"></label>
+          <label> </label>
+          <label ></label>
+          <label id="ENTfullline1">Difficulties</label>
+          <label>Hearing Loss:</label>
+          <label class="labelblue" id="Reshearloss"></label>
+          <label >Tinnitus:</label>
+          <label id="Restinnitus"></label>
+          <label >Dizziness:</label>
+          <label  class="labelblue" id="Resdizziness"></label>
+          <label >Auditoy sentivity to noisy environment:</label>
+          <label id="ResauditorySensi"></label>
+          <label> Last hearing test:</label>
+          <label class="labelblue" id="ReslastTest"></label>
+          <label> </label>
+          <label ></label>
+          <label id="ENTfullline2">Epilepsy</label>
+          <label > History of epilepsy:</label>
+          <label class="labelblue" id="Resepilepsy"></label>
+          <label> </label>
+          <label ></label>
+          <label id="ENTfullline3">Other</label>
+          <label > Important health related problems:</label>
+          <label class="labelblue" id="Reshealthprob" ></label>
+          <label> </label>
+          <label ></label>
+          <label id="ENTfullline4">Goals</label>
+          <label > Goals for TOMATIS programs:</label>
+          <label class="labelblue" id="Resgoals" ></label>
+          <label > Goals examples:</label>
+          <label class="labelblue" id="Resgoalexample"></label>
+          </div>
+        </div><br><br>
+        <button id="PDF_ASSEMENT" onclick="Generate_ASSPDF()">Generate PDF</button>
+      </div>
+    <div id="TEDRES" class="ResContent">
+      <div id="EXPORT_TEDPDF">
+        <div class="gridScoreZone">
+          <label>Zone 1</label>
+          <label>Zone 2</label>
+          <label>Zone 3</label>
+          <div class="gridProgressScore">
+          <label id="Z1Score">50</label>
+          <progress id="Z1progress" class="bar" max="100" value="50"></progress> 
+          </div>
+          <div class="gridProgressScore">
+          <label id="Z2Score">25</label>
+          <progress id="Z2progress" class="bar" max="100" value="25"></progress> 
+          </div>
+          <div class="gridProgressScore">
+          <label id="Z3Score">75</label>
+          <progress id="Z3progress" class="bar" max="100" value="75"></progress> 
+          </div>
+          <div>
+          <canvas id="ChartZ1"></canvas>
+          </div>
+          <div>
+          <canvas id="ChartZ2"></canvas>
+          </div>
+          <div>
+          <canvas id="ChartZ3"></canvas>
+          </div>
+        </div><br><br>
+        <div class="gridScoreZone">
+          <label>Zone 12</label>
+          <label>Zone 13</label>
+          <label>Zone 23</label>
+          <div class="gridProgressScore">
+          <label id="Z12Score">50</label>
+          <progress id="Z12progress" class="bar" max="100" value="50"></progress> 
+          </div>
+          <div class="gridProgressScore">
+          <label id="Z13Score">25</label>
+          <progress id="Z13progress" class="bar" max="100" value="25"></progress> 
+          </div>
+          <div class="gridProgressScore">
+          <label id="Z23Score">75</label>
+          <progress id="Z23progress" class="bar" max="100" value="75"></progress> 
+          </div>
+          <div>
+          <canvas id="ChartZ12"></canvas>
+          </div>
+          <div >
+          <canvas id="ChartZ13"></canvas>
+          </div>
+          <div>
+          <canvas id="ChartZ23"></canvas>
+          </div>
+        </div><br><br>
+        <div class="gridScoreDEA">
+          <label id="DEAfullline1">DAS Score</label>
+          <label></label>
+          <label></label>
+          <label>Depression</label>
+          <label>Anxiety</label>
+          <label>Stress</label>
+          <label>EMQ</label>
+          <label>ASRS</label>
+          <label id="depressScore"></label>
+          <label id="anxietyScore"></label>
+          <label id="stressScore"></label>
+          <label id="emqScore"></label>
+          <label id="asrsScore"></label>
+        </div><br><br>
+      </div>
+      <button id="exportCSV" onclick="ExportCSV()">Export TED Answer to CSV</button>
+      <button id="PDF_TED" onclick="Generate_TEDPDF()">Generate PDF</button>
+    </div>
+  </div>
+</body>
+<script src="scriptJS.js"></script>
+</html>
+
+    
